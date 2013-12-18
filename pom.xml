@@ -6,7 +6,7 @@
 	<artifactId>toggle-button-root</artifactId>
 	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ToggleButton Add-on Root Project</name>
+	<name>tgglbttn-v7 Add-on Root Project</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
