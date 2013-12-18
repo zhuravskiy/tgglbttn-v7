@@ -26,11 +26,22 @@
 
 	<scm>
 		<url>git://github.com/pmatti/tgglbttn-v7.git</url>
+		<connection>scm:git:git@github.com:pmatti/tgglbttn-v7.git</connection>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub</system>
 		<url>https://github.com/pmatti/tgglbttn-v7/issues</url>
 	</issueManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.2</version>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

@@ -34,7 +34,8 @@ public class DemoUI extends UI {
         layout.setSpacing(true);
         setContent(layout);
 
-        final ToggleButton button = new ToggleButton("I am toggle button. Click me");
+        final ToggleButton button = new ToggleButton(
+                "I am toggle button. Click me");
         button.setRequired(true);
         layout.addComponent(button);
 
@@ -45,18 +46,18 @@ public class DemoUI extends UI {
                 Notification.show("Value changed to " + button.getValue());
             }
         });
-        
-        
-        final Button changeState = new Button("Click here to change value on the toggle button");
-        
+
+        final Button changeState = new Button(
+                "Click here to change value on the toggle button");
+
         changeState.addClickListener(new Button.ClickListener() {
-            
+
             @Override
             public void buttonClick(ClickEvent event) {
                 button.setValue(!button.getValue());
             }
         });
-        
+
         layout.addComponent(changeState);
 
     }
