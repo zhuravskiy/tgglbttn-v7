@@ -4,7 +4,7 @@
 	<groupId>org.vaadin.pmatti.v7</groupId>
 	<artifactId>toggle-button-root</artifactId>
 	<packaging>pom</packaging>
-	<version>0.0.1</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>tgglbttn-v7 Add-on Root Project</name>
 
 	<properties>
@@ -26,7 +26,7 @@
 	<scm>
 		<url>git://github.com/pmatti/tgglbttn-v7.git</url>
 		<connection>scm:git:git@github.com:pmatti/tgglbttn-v7.git</connection>
-	  <tag>toggle-button-root-0.0.1</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<issueManagement>
