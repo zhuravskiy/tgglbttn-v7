@@ -13,6 +13,7 @@ import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
@@ -47,17 +48,16 @@ public class DemoUI extends UI {
             }
         });
 
-        final Button changeState = new Button(
+        final CheckBox changeState = new CheckBox(
                 "Click here to change value on the toggle button");
 
-        changeState.addClickListener(new Button.ClickListener() {
-
+        changeState.addValueChangeListener(new ValueChangeListener() {
+            
             @Override
-            public void buttonClick(ClickEvent event) {
-                button.setValue(!button.getValue());
+            public void valueChange(ValueChangeEvent event) {
+                button.setValue(changeState.getValue());
             }
         });
-
         layout.addComponent(changeState);
 
     }
