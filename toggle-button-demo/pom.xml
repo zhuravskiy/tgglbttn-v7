@@ -129,6 +129,7 @@
 						**/WEB-INF/classes/widgetsets/**
 					</packagingExcludes>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warName>tgglbttn-v7</warName>
 		        </configuration>
 			</plugin>
 
