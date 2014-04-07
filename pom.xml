@@ -42,7 +42,7 @@
 				<version>2.4.2</version>
 				<configuration>
 					<goals>install</goals>
-				</confgiuration>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
