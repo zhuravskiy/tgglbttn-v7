@@ -4,7 +4,7 @@
 	<groupId>org.vaadin.pmatti.v7</groupId>
 	<artifactId>toggle-button-root</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>tgglbttn-v7 Add-on Root Project</name>
 
 	<properties>
