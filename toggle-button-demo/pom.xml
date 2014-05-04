@@ -4,7 +4,7 @@
 	<artifactId>toggle-button-demo</artifactId>
 	<packaging>war</packaging>
 	<name>tgglbttn-v7 Add-on Demo</name>
-	
+
 	<parent>
 	    <groupId>org.vaadin.pmatti.v7</groupId>
 	    <artifactId>toggle-button-root</artifactId>
@@ -175,7 +175,7 @@
 			</plugin>
 
 		</plugins>
-	
+
 		<pluginManagement>
 			<plugins>
 				<!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->

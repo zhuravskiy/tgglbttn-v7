@@ -172,7 +172,7 @@
 			</plugin>
 		</plugins>
 
-		<!-- This is needed for the sources required by the client-side compiler 
+		<!-- This is needed for the sources required by the client-side compiler
 			to be included in the produced JARs -->
 		<resources>
 			<resource>
