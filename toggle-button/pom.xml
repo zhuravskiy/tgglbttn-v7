@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.vaadin.pmatti.v7</groupId>
 	<artifactId>toggle-button</artifactId>
+	<version>1.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>tgglbttn-v7 Add-on</name>
 
-	<parent>
-		<groupId>org.vaadin.pmatti.v7</groupId>
-		<artifactId>toggle-button-root</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
-	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+		<vaadin.version>7.1.15</vaadin.version>
+		<vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
 		<!-- ZIP Manifest fields -->
 		<Implementation-Version>${project.version}</Implementation-Version>
 		<!-- Must not change this because of the Directory -->
