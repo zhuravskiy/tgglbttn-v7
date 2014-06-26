@@ -34,7 +34,9 @@ public class DemoUI extends UI {
         setContent(layout);
 
         final ToggleButton button = new ToggleButton(
-                "I am toggle button. Click me");
+                "I am toggle button. <i>Click me</i>");
+        
+        button.setHtmlContentAllowed(true);
         button.setRequired(true);
         layout.addComponent(button);
 

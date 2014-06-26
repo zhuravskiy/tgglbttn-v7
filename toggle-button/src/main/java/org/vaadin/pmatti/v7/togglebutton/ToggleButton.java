@@ -1,5 +1,7 @@
 package org.vaadin.pmatti.v7.togglebutton;
 
+import org.vaadin.pmatti.v7.togglebutton.client.ToggleButtonState;
+
 import com.vaadin.data.Property;
 import com.vaadin.ui.CheckBox;
 
@@ -7,25 +9,43 @@ import com.vaadin.ui.CheckBox;
 // for ToggleButton
 public class ToggleButton extends CheckBox {
 
-    /**
+	/**
 	 * 
 	 */
-    private static final long serialVersionUID = 8050666306123685852L;
+	private static final long serialVersionUID = 8050666306123685852L;
 
-    public ToggleButton() {
-        super();
-    }
+	public ToggleButton() {
+		super();
+	}
 
-    public ToggleButton(String caption, boolean initialState) {
-        super(caption, initialState);
-    }
+	public ToggleButton(String caption, boolean initialState) {
+		super(caption, initialState);
+	}
 
-    public ToggleButton(String caption, Property<?> dataSource) {
-        super(caption, dataSource);
-    }
+	public ToggleButton(String caption, Property<?> dataSource) {
+		super(caption, dataSource);
+	}
 
-    public ToggleButton(String caption) {
-        super(caption);
+	public ToggleButton(String caption) {
+		super(caption);
+	}
+
+	public void setHtmlContentAllowed(boolean htmlAllowed) {
+    	getState().htmlContentAllowed = htmlAllowed;
     }
+	
+	public boolean isHtmlContentAllowed() {
+		return getState(false).htmlContentAllowed;
+	}
+
+	@Override
+	protected ToggleButtonState getState() {
+		return (ToggleButtonState) super.getState();
+	}
+	
+	@Override
+	protected ToggleButtonState getState(boolean markAsDirty) {
+		return (ToggleButtonState) super.getState(markAsDirty);
+	}
 
 }
