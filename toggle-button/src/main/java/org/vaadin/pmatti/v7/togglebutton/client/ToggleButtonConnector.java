@@ -9,7 +9,7 @@ import com.vaadin.client.MouseEventDetailsBuilder;
 import com.vaadin.client.communication.StateChangeEvent;
 import com.vaadin.client.communication.StateChangeEvent.StateChangeHandler;
 import com.vaadin.client.ui.AbstractFieldConnector;
-import com.vaadin.client.ui.ImageIcon;
+import com.vaadin.client.ui.Icon;
 import com.vaadin.shared.MouseEventDetails;
 import com.vaadin.shared.communication.FieldRpc.FocusAndBlurServerRpc;
 import com.vaadin.shared.ui.Connect;
@@ -73,19 +73,16 @@ public class ToggleButtonConnector extends AbstractFieldConnector implements
 
             @Override
             public void onStateChanged(StateChangeEvent stateChangeEvent) {
-                if (getIcon() != null) {
-                    if (widget.icon == null) {
-                        widget.icon = new ImageIcon();
-                        widget.wrapper.insertBefore(widget.icon.getElement(),
-                                widget.captionElement);
-                    }
-                    widget.icon.setUri(getIconUri());
-                    widget.icon.setAlternateText(getState().iconAltText);
-                } else {
-                    if (widget.icon != null) {
-                        widget.wrapper.removeChild(widget.icon.getElement());
-                        widget.icon = null;
-                    }
+                if (getWidget().icon != null) {
+                    getWidget().wrapper.removeChild(getWidget().icon.getElement());
+                    getWidget().icon = null;
+                }
+                Icon icon = getIcon();
+                if (icon != null) {
+                    getWidget().icon = icon;
+                    icon.setAlternateText(getState().iconAltText);
+                    getWidget().wrapper.insertBefore(icon.getElement(),
+                            getWidget().captionElement);
                 }
             }
         });
