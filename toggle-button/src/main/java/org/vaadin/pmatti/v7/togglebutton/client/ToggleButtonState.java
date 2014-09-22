@@ -5,7 +5,7 @@ import com.vaadin.shared.ui.checkbox.CheckBoxState;
 public class ToggleButtonState extends CheckBoxState {
 
 	/**
-	 * 
+	 *
 	 */
 	private static final long serialVersionUID = 947456284106053767L;
 
@@ -21,4 +21,5 @@ public class ToggleButtonState extends CheckBoxState {
      */
     public boolean htmlContentAllowed = false;
     public String iconAltText = "";
+    public boolean toggleDisable = false;
 }

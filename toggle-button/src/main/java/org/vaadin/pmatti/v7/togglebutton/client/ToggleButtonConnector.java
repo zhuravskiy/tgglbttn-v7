@@ -1,13 +1,6 @@
 package org.vaadin.pmatti.v7.togglebutton.client;
 
-import org.vaadin.pmatti.v7.togglebutton.ToggleButton;
-
-import com.google.gwt.event.dom.client.BlurEvent;
-import com.google.gwt.event.dom.client.BlurHandler;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.dom.client.FocusEvent;
-import com.google.gwt.event.dom.client.FocusHandler;
+import com.google.gwt.event.dom.client.*;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.DOM;
 import com.vaadin.client.ComponentConnector;
@@ -22,6 +15,7 @@ import com.vaadin.shared.communication.FieldRpc.FocusAndBlurServerRpc;
 import com.vaadin.shared.ui.Connect;
 import com.vaadin.shared.ui.Connect.LoadStyle;
 import com.vaadin.shared.ui.checkbox.CheckBoxServerRpc;
+import org.vaadin.pmatti.v7.togglebutton.ToggleButton;
 
 @Connect(value = ToggleButton.class, loadStyle = LoadStyle.EAGER)
 public class ToggleButtonConnector extends AbstractFieldConnector implements
@@ -44,7 +38,7 @@ public class ToggleButtonConnector extends AbstractFieldConnector implements
 
         widget.client = getConnection();
         widget.id = getConnectorId();
-
+        widget.toggleDisabled = getState().toggleDisable;
         addStateChangeHandler("errorMessage", new StateChangeHandler() {
             /**
 			 * 
@@ -137,7 +131,7 @@ public class ToggleButtonConnector extends AbstractFieldConnector implements
 
         // update the click shortcut
         widget.clickShortcut = getState().clickShortcutKeyCode;
-        
+        widget.toggleDisabled = getState().toggleDisable;
         //update value from the state
         widget.setValue(getState().checked, false);
         

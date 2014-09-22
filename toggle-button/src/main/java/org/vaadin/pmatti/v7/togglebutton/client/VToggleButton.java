@@ -28,10 +28,12 @@ public class VToggleButton extends VButton implements HandlesAriaInvalid,
 	public static final String CLASSNAME = VButton.CLASSNAME;
 	private static final String CLASSNAME_PRESSED = "v-pressed";
 
+    protected boolean toggleDisabled;
+
 	public VToggleButton() {
 		super();
 		setStyleName(CLASSNAME);
-		Roles.getCheckboxRole().set(getElement());
+		Roles.getButtonRole().set(getElement());
 	}
 
 	@Override
@@ -56,12 +58,12 @@ public class VToggleButton extends VButton implements HandlesAriaInvalid,
 
 	private void push() {
 		value = true;
-		addStyleName(CLASSNAME_PRESSED);
+        if (!toggleDisabled) addStyleName(CLASSNAME_PRESSED);
 	}
 
 	private void pop() {
 		value = false;
-		removeStyleName(CLASSNAME_PRESSED);
+        if (!toggleDisabled) removeStyleName(CLASSNAME_PRESSED);
 	}
 
 	private void toggle() {
@@ -110,11 +112,20 @@ public class VToggleButton extends VButton implements HandlesAriaInvalid,
 	@Override
 	public void onBrowserEvent(Event e) {
 		super.onBrowserEvent(e);
-		if(value) {
-			addStyleName(CLASSNAME_PRESSED);
-		} else {
-			removeStyleName(CLASSNAME_PRESSED);
-		}
+        if (!toggleDisabled) {
+            if(value) {
+                addStyleName(CLASSNAME_PRESSED);
+            } else {
+                removeStyleName(CLASSNAME_PRESSED);
+            }
+        }
 	}
 
+    public boolean isToggleDisabled() {
+        return toggleDisabled;
+    }
+
+    public void setToggleDisabled(boolean toggleDisabled) {
+        this.toggleDisabled = toggleDisabled;
+    }
 }

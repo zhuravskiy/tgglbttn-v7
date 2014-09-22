@@ -38,6 +38,14 @@ public class ToggleButton extends CheckBox {
 		return getState(false).htmlContentAllowed;
 	}
 
+    public void setToggleDisabled(boolean disabled) {
+        getState().toggleDisable = disabled;
+    }
+
+    public boolean isToggleDisabled() {
+        return getState().toggleDisable;
+    }
+
 	@Override
 	protected ToggleButtonState getState() {
 		return (ToggleButtonState) super.getState();
